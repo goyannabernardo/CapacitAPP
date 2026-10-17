@@ -25,26 +25,36 @@ function preencherEstatisticas(estatisticas: Estatisticas): void {
 }
 
 
-
+// Constroi as colunas de forma mais eficiente e evita XSS
 function preencherTabela(contas: Contas[]): void {
-    const tabelaCorpo = document.getElementById("tabela-corpo");
-    if (!tabelaCorpo) return;
+    const tabela = document.getElementById("tabela-corpo");
+    if (!tabela) return;
 
-    tabelaCorpo.innerHTML = "";
+    const fragmento = document.createDocumentFragment();
 
     contas.forEach((conta) => {
-        tabelaCorpo.innerHTML += `
-            <tr>
-                <td>${conta.nome}</td>
-                <td>${conta.email}</td>
-                <td>R$ ${conta.valor}</td>
-                <td>${conta.Pagamento}</td>
-                <td>${conta.status}</td>
-                <td>${conta.data}</td>
-                <td>${conta.novo ? "Sim" : "Não"}</td>
-            </tr>
-        `;
+        const tr = document.createElement("tr");
+
+        const celulas = [
+            conta.nome,
+            conta.email,
+            `R$ ${conta.valor}`,
+            conta.Pagamento,
+            conta.status,
+            conta.data,
+            conta.novo ? "Sim" : "Não",
+        ];
+
+        celulas.forEach((texto) => {
+            const td = document.createElement("td");
+            td.textContent = texto;
+            tr.appendChild(td);
+        });
+
+        fragmento.appendChild(tr);
     });
+
+    tabela.replaceChildren(fragmento);
 }
 
 
