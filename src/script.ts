@@ -2,6 +2,8 @@ import retornaDados, { Estatisticas, Contas } from "./lib/fetchDados.js";
 
 const url = "https://api.origamid.dev/json/transacoes.json";
 
+let todasAsContas: Contas[] = [];
+
 function preencherEstatisticas(estatisticas: Estatisticas): void {
     const totalElement = document.getElementById("total");
     const valorElement = document.getElementById("valor-total");
@@ -59,6 +61,30 @@ function preencherTabela(contas: Contas[]): void {
 
 
 
+function configurarFiltro(): void {
+    const botoes = document.querySelectorAll<HTMLButtonElement>(".filtro-btn");
+
+    botoes.forEach((botao) => {
+        botao.addEventListener("click", () => {
+            const statusSelecionado = botao.dataset.status;
+
+            botoes.forEach((b) => {
+                const ativo = b === botao;
+                b.classList.toggle("ativo", ativo);
+                b.setAttribute("aria-pressed", String(ativo));
+            });
+
+            if (statusSelecionado === "Todos") {
+                preencherTabela(todasAsContas);
+            } else {
+                preencherTabela(todasAsContas.filter((conta) => conta.status === statusSelecionado));
+            }
+        });
+    });
+}
+
+
+
 // Roda os scrpits necessarios para receber os dados
 async function iniciar() {
     const dados = await retornaDados(url);
@@ -76,7 +102,9 @@ async function iniciar() {
     if (telaErro) telaErro.style.display = "none";
 
     preencherEstatisticas(dados.estatisticas);
-    preencherTabela(dados.contasLimpas);
+    todasAsContas = dados.contasLimpas;
+    preencherTabela(todasAsContas);
+    configurarFiltro();
 }
 
 iniciar();

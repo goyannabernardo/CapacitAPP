@@ -61,6 +61,14 @@
 
             <section class="secao-clientes">
                 <h2>Dados dos clientes</h2>
+
+                <div class="filtro-container" role="group" aria-label="Filtrar por status">
+                    <button class="filtro-btn ativo" data-status="Todos" aria-pressed="true">Todos</button>
+                    <button class="filtro-btn" data-status="Paga" aria-pressed="false">Pagas</button>
+                    <button class="filtro-btn" data-status="Aguardando pagamento" aria-pressed="false">Aguardando</button>
+                    <button class="filtro-btn" data-status="Recusada pela operadora de cartão" aria-pressed="false">Recusadas</button>
+                    <button class="filtro-btn" data-status="Estornada" aria-pressed="false">Estornadas</button>
+                </div>
                 
                 <div class="tabela-wrapper">
                     <table>
@@ -75,7 +83,9 @@
                                 <th>Novo cliente</th>
                             </tr>
                         </thead>
-                        <tbody id="tabela-corpo"></tbody>
+                        <tbody id="tabela-corpo">
+                            <tr><td colspan="7">Carregando...</td></tr>
+                        </tbody>
                     </table>
                 </div>
             </section>
