@@ -1,6 +1,6 @@
 # CapacitAPP - a simple Dashboard of transactions
 
-A small and quick web project i made for my junior company internal onboarding to showcase TypeScript and REST API basic fundamentals that was based in the ORIGAMID typescript course. I picked up from my other account and did a quick clean up and small improvements.
+A small and quick web project I made for my junior company internal onboarding to showcase TypeScript and REST API basic fundamentals that was based on the ORIGAMID typescript course. I picked up from my other account and did a quick clean up and small improvements.
 
 ![Print of the Dashboard](./assets/capacitAPP.png)
 
