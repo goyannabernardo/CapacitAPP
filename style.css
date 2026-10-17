@@ -1,0 +1,133 @@
+:root {
+    --green: #0c3120;
+    --off-white: #f9e9da;
+    --green-transparent-5: rgba(12, 49, 32, 0.05);
+    --green-transparent-10: rgba(12, 49, 32, 0.1);
+    --green-transparent-2: rgba(12, 49, 32, 0.02);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    background-color: var(--green); 
+    color: var(--green);
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.dashboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.dashboard-header {
+    margin-bottom: 4px;
+}
+
+.dashboard-header h1 {
+    color: var(--off-white);
+    font-size: 3rem;
+    font-weight: 800;
+    display: flex;
+    align-items: baseline;
+    gap: 15px;
+}
+
+.dashboard-header h1 span {
+    font-size: 1.1rem;
+    color: var(--off-white);
+    font-weight: 400;
+}
+
+.card-principal {
+    background-color: var(--off-white);
+    border-radius: 32px;
+    padding: 40px;
+    min-height: 500px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.secao-estatisticas {
+    margin-bottom: 48px;
+}
+
+.secao-estatisticas h2, 
+.secao-clientes h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+.grid-estatisticas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.bloco-resumo {
+    background-color: var(--green-transparent-5);
+    border: 1px solid var(--green-transparent-10);
+    padding: 20px;
+    border-radius: 16px;
+}
+
+.bloco-resumo p {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    opacity: 0.7;
+    margin-bottom: 8px;
+}
+
+.bloco-resumo span {
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.tabela-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 16px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th, td {
+    padding: 16px;
+    border-bottom: 1px solid var(--green-transparent-10);
+}
+
+th {
+    font-weight: 700;
+    opacity: 0.8;
+}
+
+td {
+    font-size: 1rem;
+}
+
+tbody tr:hover {
+    background-color: var(--green-transparent-2);
+}
+
+th:nth-child(3) { 
+    width: 15%; 
+}
+
+.card-erro {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}

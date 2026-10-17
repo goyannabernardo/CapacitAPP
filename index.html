@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CapacitAPP - Dashboard de Transações</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="dashboard-container">
+        
+        <header class="dashboard-header">
+            <h1>CapacitAPP <span>&lt;dashboard de transações&gt;</span></h1>
+        </header>
+
+        <article class="card-principal" id="container-dados">
+            
+            <section class="secao-estatisticas">
+                <h2>Estatísticas gerais</h2>
+                
+                <div class="grid-estatisticas">
+                    <div class="bloco-resumo">
+                        <p>Total de Vendas</p>
+                        <span id="total">-</span>
+                    </div>
+                    <div class="bloco-resumo">
+                        <p>Faturamento</p>
+                        <span id="valor-total">-</span>
+                    </div>
+                    <div class="bloco-resumo">
+                        <p>Pagas em Boleto</p>
+                        <span id="boleto">-</span>
+                    </div>
+                    <div class="bloco-resumo">
+                        <p>Pagas em Crédito</p>
+                        <span id="credito">-</span>
+                    </div>
+
+                    <div class="bloco-resumo">
+                        <p>Transações Pagas</p>
+                        <span id="status-paga">-</span>
+                    </div>
+                    <div class="bloco-resumo">
+                        <p>Aguardando Pagamento</p>
+                        <span id="status-aguardando">-</span>
+                    </div>
+                    <div class="bloco-resumo">
+                        <p>Transações Recusadas</p>
+                        <span id="status-recusada">-</span>
+                    </div>
+                    <div class="bloco-resumo">
+                        <p>Transações Estornadas</p>
+                        <span id="status-estornada">-</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="secao-clientes">
+                <h2>Dados dos clientes</h2>
+                
+                <div class="tabela-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Email</th>
+                                <th>Valor</th>
+                                <th>Pagamento</th>
+                                <th>Status</th>
+                                <th>Data / Hora</th>
+                                <th>Novo cliente</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabela-corpo"></tbody>
+                    </table>
+                </div>
+            </section>
+
+        </article>
+
+        <article class="card-principal card-erro" id="tela-erro" style="display: none;">
+            <h2>Algo deu errado</h2>
+            <p>Não foi possível conectar à API de transações. Verifique sua conexão ou tente novamente mais tarde.</p>
+        </article>
+
+    </main>
+
+    <script type="module" src="src/script.js"></script>
+</body>
+</html>
