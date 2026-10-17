@@ -10,7 +10,7 @@ The app fetches transaction data directly from the Origamid REST API, validates 
 ## Technologies Used
 - **Languages:** TypeScript / JavaScript
 - **Styling:** CSS3
-- **Run:** HTML5
+- **Markup:** HTML5
 
 ## Run
 ```bash
