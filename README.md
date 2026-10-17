@@ -8,12 +8,13 @@ A small and quick web project i made for my junior company internal onboarding t
 The app fetches transaction data directly from the Origamid REST API, validates and types the payload, calculates overall financial metrics (such as total sales, net revenue, and payment methods), and dynamically renders everything into a clean interactive interface.
 
 ## Technologies Used
-- **Linguagem:** TypeScript / JavaScript (ES6+)
-- **Estilização:** CSS3
-- **Execução:** HTML5
+- **Languages:** TypeScript / JavaScript
+- **Styling:** CSS3
+- **Run:** HTML5
 
 ## Run
 ```bash
 npm install
 npm run build
 npx serve .
+```
