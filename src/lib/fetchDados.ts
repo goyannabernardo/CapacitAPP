@@ -31,7 +31,7 @@ export interface Contas {
     email: string;
     
     valor: string; 
-    Pagamento: string;
+    pagamento: string;
     
     status: string;
     data: string;
@@ -89,7 +89,7 @@ async function puxarDados(url: string): Promise<ContasBruto[] | null> {
 
 
 function processarEstatisticas(listaBruta: ContasBruto[]): Estatisticas {
-    let totalTransacoes = listaBruta.length;
+    const totalTransacoes = listaBruta.length;
     let somaValores = 0;
     
     let totalCredito = 0;
@@ -142,7 +142,7 @@ function processaBrutos(listaBruta: ContasBruto[]): Contas[] {
             nome: conta.Nome,
             email: conta.Email,
             valor: conta["Valor (R$)"],
-            Pagamento: conta["Forma de Pagamento"],
+            pagamento: conta["Forma de Pagamento"],
             status: conta.Status,
             data: conta.Data,
             novo: Boolean(conta["Cliente Novo"])

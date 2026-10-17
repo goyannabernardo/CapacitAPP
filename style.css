@@ -131,3 +131,36 @@ th:nth-child(3) {
     align-items: center;
     gap: 16px;
 }
+.filtro-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.filtro-btn {
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: 999px;
+    border: 1px solid var(--green);
+    background-color: transparent;
+    color: var(--green);
+    cursor: pointer;
+    transition: background-color 0.15s, color 0.15s;
+}
+
+.filtro-btn:hover {
+    background-color: var(--green-transparent-10);
+}
+
+.filtro-btn.ativo {
+    background-color: var(--green);
+    color: var(--off-white);
+}
+
+.filtro-btn:focus-visible {
+    outline: 2px solid var(--green);
+    outline-offset: 2px;
+}
