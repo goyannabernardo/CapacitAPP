@@ -1,8 +1,9 @@
 {
-  "name": "capacitAPP",
+  "name": "capacitapp",
   "version": "2.0.0",
   "description": "A quick site made following the typescript course on ORIGAMID for my junior company internal onboarding",
   "type": "module",
+  "private": true,
   "scripts": {
     "build": "tsc",
     "dev": "tsc -w"
