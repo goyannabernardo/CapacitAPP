@@ -39,7 +39,7 @@ function preencherTabela(contas: Contas[]): void {
             conta.nome,
             conta.email,
             `R$ ${conta.valor}`,
-            conta.Pagamento,
+            conta.pagamento,
             conta.status,
             conta.data,
             conta.novo ? "Sim" : "Não",
