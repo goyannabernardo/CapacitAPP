@@ -106,7 +106,6 @@ function processarEstatisticas(listaBruta: ContasBruto[]): Estatisticas {
         
         switch (conta.Status) {
             case "Paga":
-                somaValores += numerizarValor(conta["Valor (R$)"]);
                 totalPagas++;
                 break;
             case "Recusada pela operadora de cartão":
@@ -119,6 +118,8 @@ function processarEstatisticas(listaBruta: ContasBruto[]): Estatisticas {
                 totalEstornadas++;
                 break;
         }
+        
+        somaValores += numerizarValor(conta["Valor (R$)"]);
     });
 
     return {
